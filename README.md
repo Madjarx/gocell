@@ -1,6 +1,6 @@
 # Cellframe CLI ran via Golang
 
-Note - sometimes the CLI might report stuff that isnt true, double check it
+**Note - sometimes the CLI might report stuff that isnt true, double check it
 
 ### Structure
 ```
@@ -19,15 +19,18 @@ src
 
 ### Explanation & what we need
 
-- transactions vs orders vs datum signing etc. (partial purchase)
-- how do wallets work (wallet activation)
-- how do keys work (certificates, etc.)
+
+- Transactions - they are used to transfer Tokens (https://wiki.cellframe.net/Resources/Terms+and+definitions/Token). 
+- Exchanges - Cellframe has an exchange "built in" - it is an order-book based system. People publish orders, other people buy them
+- Wallets are "node-based" meaning in order to use your `FreshWallet#2` 
+  - you need to have access to it via node - check via `wallet list` and **activate it** - `wallet activate -w FreshWallet#2 -password 123
+  - you have to create it with `wallet new`
+  - **those wallets need to be active and accessible in order for you to use them via the cli**
 
 
-### How to run
+### How to test the integrations
 
-```go run src/examples/**``` - its empty as of now
-
-or if its not implemented then:
+Check the file and comment out regions that you do not want to run.
+Pass in the proper values you want to run the tests with
 
 ```go run src/main.go```
