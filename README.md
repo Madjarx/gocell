@@ -2,6 +2,8 @@
 
 **Note - sometimes the CLI might report stuff that isnt true, double check it
 
+**Note - make sure to read the comments, i've left some useful information there (i.e. format of the `value` and `fee` fields)
+
 ### Structure
 ```
 src
