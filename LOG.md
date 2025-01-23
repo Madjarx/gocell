@@ -79,11 +79,46 @@ Of which 2 were accepted into the ledger and 0 were rejected.
 
 ## Exchanges
 
-
+Purchasing QEVM - randomly found order
 ```
 ➜  ~/QEVM/go-cellframe-cli git:(master) ✗ go run src/main.go                                              
 2025/01/23 15:36:55 Executing transaction creation command: /opt/cellframe-node/bin/cellframe-node-cli [srv_xchange purchase -order 0x3731105E08B5633B546A2D9FDC1C3A02FC7022EF6221AF6D4F7A6B80DB22C965 -net Backbone -w exchange -value 10000000000000000 -fee 50000000000000000]
 Successfully purchased order:
 Exchange transaction has done. tx hash: 0x3C696E1D9D93BEE9A3C05DDF04884F75785C7EB9D580CC31FC3FC37A4DCC0DDA
 
+```
+
+Checking results & output afterwards:
+```
+> wallet info -w exchange -net Backbone
+    
+        
+            sign: correct
+            wallet: exchange
+            addr: Rj7J7MiX2bWy8sNyZDhn63wrZbC71FjnEMJEEC9vYfMTdpkdo17iPH5A2ecsuCbs9WPt4kJ3wAEPi1upocqVBsV4jstkHCtX8g8L1Jyr
+            network: Backbone
+            signs: sig_dil
+            tokens: 
+                
+                    balance: 
+                    coins: 0.79
+                    datoshi: 790000000000000000
+                    token: 
+                        ticker: CELL
+                        description: 
+
+
+                
+                    balance: 
+                    coins: 0.000015
+                    datoshi: 15000000000000
+                    token: 
+                        ticker: QEVM
+                        description: 
+
+
+
+
+
+> 
 ```
