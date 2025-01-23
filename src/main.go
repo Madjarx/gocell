@@ -29,16 +29,17 @@ func main() {
     */
 
 
-    // #region Transactions
+    // #region Transactions a.k.a. token transfers
 	params := cli.TransactionParams{
 		Network:    "Backbone",
 		Chain:      "main",
-		Value:      "10000000000000000000",
+		// Value:      "10000000000000000000", // 10 $CELL
+		Value:      "100000000000000000", // 0.1 $CELL
 		Token:      "CELL",
-		ToAddress:  "Rj7J7MiX2bWy8sNyZy2GFBM9uMuTSZe8u55UntukwMR51gnAeY5UgBvvBquzNubQP5cnSXoUjHJXUUnKxY592dwQf3fUyWAatEroQbd6",
+		ToAddress:  "Rj7J7MiX2bWy8sNyb2Zn74XqguhasMmiVvmM6amcQVyAmCTuqfutnFa8wfe4ts93cuDdEdUDQ59fCbbqBMisvzRySWCv6Hp6sDS1kbjz",
 		FromWallet: "exchange",
 		// Fee:        "0.05e+18",
-		Fee: "50000000000000000", // Its more stable to have it in this format
+		Fee: "50000000000000000", // Its more stable to have it in this format (Datoshi)
 	}
 
     txHash, err := txService.CreateUnsignedTransaction(params)
@@ -59,15 +60,18 @@ func main() {
 		TokenBuy:  "CELL",
 		TokenSell: "QEVM",
 		Wallet:    "exchange", // this is a wallet i created locally, i can access it and i have activated it
-		Rate:      "1.0",
+		Rate:      "1.0",      // Has to be in a decimal format 1.0 (example)
 		Fee:       "50000000000000000",
 	}
 
+    // https://gist.github.com/Madjarx/e4c2e1ba09d1ca842c3d16773398d1e3
+    // Look at the github link under the section (QEVM Sell - people selling $QEVM and we're giving them CELL)
+    // pick any hash from there and use it as the OrderHash
 	paramsOrderPurchase := cli.ExchangePurchaseParams{
 		Network:   "Backbone",
 		OrderHash: "0x3731105E08B5633B546A2D9FDC1C3A02FC7022EF6221AF6D4F7A6B80DB22C965",
 		Wallet:    "exchange",
-		Value:     "10000000000000000000",
+		Value:     "10000000000000000",
 		Fee:       "50000000000000000",
 	}
 

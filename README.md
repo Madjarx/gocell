@@ -1,24 +1,20 @@
-# Cellframe CLI done via Golang
+# Cellframe CLI ran via Golang
 
-## This document is not up to date
-I will update this doc after running the tests myself
-For now forget that it exists
-
-
-
-Lets try to avoid passing in strings as one missed zero place can lead to
-a lot of headache.
-
+Note - sometimes the CLI might report stuff that isnt true, double check it
 
 ### Structure
 ```
-src/
-  ├── cli/
-  │   └── manager.go      # CLI command implementations
-  ├── config/
-  │   └── paths.go        # Manages imports and other important fs paths
-  │   
-  └── main.go             # Example of how to use the CLI commands
+src
+├── cli
+│   ├── command_builder.go  # builds actual command based on params:  abc=123 --> "wallet info abc"
+│   ├── executioner.go      # Runner / daemon / executes command
+│   ├── FLOW.md             # WIP doc
+│   ├── transaction.go      # main file, bundles everything together
+│   └── types.go            # .
+├── config
+│   └── paths.go            # Path to CLI binary
+└── main.go
+
 ```
 
 ### Explanation & what we need
